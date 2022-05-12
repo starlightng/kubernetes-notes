@@ -92,15 +92,11 @@ $ kubectl apply -f clusterautoscaler.yml
 $ terraform destroy --auto-approve 
 ```
 #AWS Provider Block for Terraform 0.12 and earlier:
-# Configure the AWS Provider
+# Configure the AWS Provider using static credentials
 provider "aws" {
-  version = "~> 3.0"
-  region  = "us-east-1"
-}
-
-# Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
 }
 
 # EKS Getting Started Guide Configuration
